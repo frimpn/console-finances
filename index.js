@@ -87,7 +87,17 @@ var finances = [
   ['Feb-2017', 671099],
 ];
 
-let totalMonths = document.getElementById('totalMonths')
-
+const totalMonths = document.getElementById('totalMonths')
 
 totalMonths.innerText = finances.length
+
+
+const totalProfitLosses = document.getElementById('totalProfitLosses')
+
+let total = 0
+
+for(let i = 0; i < finances.length; i++){
+  total += finances[i][1]
+ }
+
+ totalProfitLosses.innerText = total
