@@ -114,3 +114,17 @@ for(let i = 0; i < finances.length; i++){
 let averageTotal = average/(finances.length-1)
 
 averageChange.innerText = averageTotal.toFixed(2)
+
+const increase = document.getElementById('increase')
+
+let greatestIncrease = 0
+let greatestMonth = ""
+
+for(let i = 1; i < finances.length; i++){
+  if(finances[i][1]- finances[i-1][1] > greatestIncrease){
+    greatestIncrease = finances[i][1]- finances[i-1][1]
+    greatestMonth = finances[i][0]
+  }
+}
+
+increase.innerText = greatestMonth + "     " + "("+ "$" + greatestIncrease + ")"
