@@ -101,3 +101,16 @@ for(let i = 0; i < finances.length; i++){
  }
 
  totalProfitLosses.innerText = total
+
+ 
+ const averageChange = document.getElementById('averageChange')
+
+ let average = 0
+
+ for(let i = 1; i < finances.length; i++){
+  average+= (finances[i][1] - finances[i-1][1])
+ }
+
+let averageTotal = average/(finances.length-1)
+
+averageChange.innerText = averageTotal.toFixed(2)
