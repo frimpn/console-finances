@@ -128,3 +128,18 @@ for(let i = 1; i < finances.length; i++){
 }
 
 increase.innerText = greatestMonth + "     " + "("+ "$" + greatestIncrease + ")"
+
+const decrease = document.getElementById('decrease')
+
+let greatestDecrease = 0
+let greatestDecreaseMonth = ""
+
+for(let i = 1; i < finances.length; i++){
+  if(finances[i][1]- finances[i-1][1] < greatestDecrease){
+    greatestDecrease = finances[i][1]- finances[i-1][1]
+    greatestDecreaseMonth = finances[i][0]
+  }
+ 
+}
+
+decrease.innerText = greatestDecreaseMonth + "      " + "(" + "$" + greatestDecrease + ")"
